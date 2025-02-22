@@ -15,10 +15,12 @@ class ItemsController < ApplicationController
     i = Item.new
 
     i.link_url = params.fetch("link_url_param")
-    i.link_desc = params.fetch("link_desc_param")
+    i.link_description = params.fetch("link_desc_param")
     i.thumbnail_url = params.fetch("thumbnail_url_param")
     i.save
 
-    render({ :template => "item_templates/create"})
+    # render({ :template => "item_templates/create"})
+
+    redirect_to("/")
   end 
 end
